@@ -2,18 +2,20 @@
     "mappings": {
         "dynamic_templates": [
             {
-                "just_integer":{
-                    "match_mapping_type" : "integer",
-                    "match" : "*",
-                    "mapping":{
-                        "type" : "integer"
-                    }
-                },
                 "image_mapping":{
                     "match_mapping_type" : "string",
                     "match": "image*",
                     "mapping" : {
                         "type" : "keyword"
+                    }
+                }
+            },
+            {
+                "just_integer":{
+                    "match_mapping_type" : "long",
+                    "match" : "*",
+                    "mapping":{
+                        "type" : "integer"
                     }
                 }
             }

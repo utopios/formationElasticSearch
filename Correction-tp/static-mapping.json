@@ -1,0 +1,20 @@
+{
+    "mappings": {
+        "properties": {
+            //nom de la propriété => objet
+            "fields" : {
+                "properties" : {
+                    "directors" : {
+                        "type": "keyword"
+                    },
+                    "actors" : {
+                        "type": "text"
+                    },
+                    "release_date" : {
+                        "type" : "date"
+                    }
+                }
+            }
+        }
+    }
+}
