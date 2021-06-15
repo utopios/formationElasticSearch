@@ -9,3 +9,65 @@ End point Ajouter des données
 End Point Création d'index templates
 
 - Verb : POST || PUT localhost:9200/_index_template/template_movie
+
+End Point pour récupérer les entités dans elasticsearch
+
+- Verb : GET localhost:9200/_cat/_index_template
+
+End Point pour effectuer une recherche
+
+- Verb : GET localhost:9200/<index>/_search dans le corps objet json DSL de recherches 
+Exemple avec term
+{
+    "query":{
+        "term":{
+            "field_name" : "exact_value"
+        }
+    }
+}
+
+Exemple full-text et match
+
+{
+    "query":{
+        "match":{
+            "fields.title": "Man of Steel"
+        }
+    }
+}
+
+Exemple full-text et match avec objet
+
+{
+    "query":{
+        "match":{
+            "fields.title": {
+                "query" : "Man of steel",
+                "fuzziness":"AUTO"
+            }
+        }
+    }
+}
+
+Exemple Mutli-match
+{
+    "query":{
+        "multi_match":{
+            "query" : "James",
+            "fields": ["fields.title", "fields.directors"]
+        }
+    }
+}
+
+Exemple Query_string
+
+{
+    "query":{
+        "query_string":{
+            "query": "Man of steel OR James",
+            "default_field" : "fields.title"
+        }
+    }
+}
+
+Exemple 
