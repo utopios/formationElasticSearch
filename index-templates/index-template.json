@@ -12,6 +12,35 @@
             "number_of_shards":2,
             "number_of_replicas" : 2
         },
-        
+        "mappings": {
+            "properties": {
+                // nom de la propriété => objet
+                "fields" : {
+                    //Les membres de notre objet
+                    "properties" : {
+                        //Chaque membre a un type
+                        "directors" : {
+                            "type": "text",
+                            "fields":{
+                                "raw":{
+                                    "type":"keyword"
+                                } 
+                            }
+                        },
+                        "actors" : {
+                            "type": "text",
+                            "fields":{
+                                "raw":{
+                                    "type":"keyword"
+                                }
+                            }
+                        },
+                        "release_date" : {
+                            "type" : "date"
+                        }
+                    }
+                }
+            }
+        }
     }
 }
