@@ -1,0 +1,17 @@
+{
+    //Le template index s'applique à tout index qui respecte les patterns
+    "index_patterns":[
+        "movies-*",
+        "big-movies-*"
+    ],
+    "template":{
+        "aliases":{
+            "movies":{}
+        },
+        "settings":{
+            "number_of_shards":2,
+            "number_of_replicas" : 2
+        },
+        
+    }
+}

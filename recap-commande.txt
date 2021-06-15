@@ -5,3 +5,7 @@ End point Ajouter index
 End point Ajouter des données
 
 - Verb : PUT localhost:9200/<index>/_bulk, => dans le corps de la requête on ajoute les données,
+
+End Point Création d'index templates
+
+- Verb : POST || PUT localhost:9200/_index_template/template_movie

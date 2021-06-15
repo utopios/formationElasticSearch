@@ -1,14 +1,26 @@
 {
     "mappings": {
         "properties": {
-            //nom de la propriété => objet
+            // nom de la propriété => objet
             "fields" : {
+                //Les membres de notre objet
                 "properties" : {
+                    //Chaque membre a un type
                     "directors" : {
-                        "type": "keyword"
+                        "type": "text",
+                        "fields":{
+                            "raw":{
+                                "type":"keyword"
+                            } 
+                        }
                     },
                     "actors" : {
-                        "type": "text"
+                        "type": "text",
+                        "fields":{
+                            "raw":{
+                                "type":"keyword"
+                            }
+                        }
                     },
                     "release_date" : {
                         "type" : "date"
