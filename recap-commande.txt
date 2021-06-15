@@ -89,3 +89,10 @@ Exemple Avec bool <should>
         }
     }
 }
+
+
+
+//Match sur un interval de date
+range:{
+    "fields.release_date": {"from":depart,"to":end}
+}
