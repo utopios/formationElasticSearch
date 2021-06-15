@@ -6,7 +6,7 @@
     ],
     "template":{
         "aliases":{
-            "movies":{}
+            "our_movies":{}
         },
         "settings":{
             "number_of_shards":2,
