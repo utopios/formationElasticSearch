@@ -1,0 +1,28 @@
+{
+    "settings":{
+        "number_of_replicas":3
+    },
+    "mappings":{  
+        "dynamic_date_formats" : ["dd/MM/yyyy"],
+        "numeric_detection" : true,
+        "dynamic_templates":[
+            {
+                "map_ip_address":{
+                    "match_mapping_type" : "string",
+                    "match" :"*ip",
+                    "mapping":{
+                        "type": "ip",
+                        "fields" :{
+                            "keyword":{
+                                "type" : "keyword"
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "aliases": {
+        "product1":{}
+    }
+}
