@@ -1,0 +1,7 @@
+End point Ajouter index
+
+- verb : PUT address : localhost:9200/<index>, => dans le corps de la requête la configuration.
+
+End point Ajouter des données
+
+- Verb : PUT localhost:9200/<index>/_bulk, => dans le corps de la requête on ajoute les données,
