@@ -12,8 +12,7 @@ End Point Création d'index templates
 
 End Point pour récupérer les entités dans elasticsearch
 
-- Verb : GET localhost:9200/_cat/_index_template
-
+- Verb : GET localhost:9200/_cat/templates
 End Point pour effectuer une recherche
 
 - Verb : GET localhost:9200/<index>/_search dans le corps objet json DSL de recherches 
@@ -44,8 +43,9 @@ Exemple full-text et match avec objet
             "fields.title": {
                 "query" : "Man of steel",
                 "fuzziness":"AUTO"
+                "operator":"and"
             }
-        }
+        },
     }
 }
 
@@ -70,4 +70,22 @@ Exemple Query_string
     }
 }
 
-Exemple 
+Exemple Avec bool <should>
+//option should => permet de cumuler plusieurs bool OR
+//option must => permet de cumuler plusieurs bool AND
+//option must_not => non du must
+//option should_not => non du should
+{
+    "query" : {
+        "bool": {
+            "must":[
+                {"match_phrase":{
+                    "fields.title":"Star Wars"
+                }},
+                {"match":{
+                    "fields.directors":"George Lucas"
+                }}
+            ]
+        }
+    }
+}
