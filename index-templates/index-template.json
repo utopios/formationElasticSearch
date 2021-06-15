@@ -1,7 +1,7 @@
 {
     //Le template index s'applique à tout index qui respecte les patterns
     "index_patterns":[
-        "movies-*",
+        "movies*",
         "big-movies-*"
     ],
     "template":{
