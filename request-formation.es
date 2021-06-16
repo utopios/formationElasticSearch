@@ -27,7 +27,7 @@ GET movies/_search/template
 
 GET movies/_search
 {
-    "size":0,
+    "size": 0,
     "query": {
         "bool": {
             "should": [
@@ -39,11 +39,18 @@ GET movies/_search
             ]
         }
     },
-
-    "aggs":{
-        "aggs_par_annee":{
-            "terms":{
-                "field":"fields.year"
+    "aggs": {
+        "aggs_par_annee": {
+            "terms": {
+                "field": "fields.year",
+                "order":{"note_moyenne":"asc"}
+            },
+            "aggs": {
+                "note_moyenne": {
+                    "avg": {
+                        "field": "fields.rating"
+                    }
+                }
             }
         }
     }
