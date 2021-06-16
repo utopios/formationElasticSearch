@@ -464,3 +464,24 @@ GET movies/_search
         }
     }
 }
+
+//Agir sur le score avec une fonction simple
+GET movies/_search
+{
+    "query":{
+        "function_score":{
+            "query":{              
+                    "match_phrase":{
+                        "fields.title":{
+                            "query":"Star Wars"
+                        }
+                    }              
+            },
+            "functions":[{
+                "field_value_factor":{
+                    "field":"fields.rating"
+                }
+            }]
+        }
+    }
+}
