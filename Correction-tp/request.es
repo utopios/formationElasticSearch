@@ -256,7 +256,7 @@ GET movies/_search
         "par_annee": {
             "terms": {
                 "field": "fields.year",
-                "order":{"rank_moyen":"desc"}
+                "order":{"_count":"desc"}
             },
             "aggs": {
                 "rank_moyen": {
@@ -265,8 +265,7 @@ GET movies/_search
                     }
                 }
             }
-        }
-        
+        }   
     }
     // "sort": {
     //     "fields.year": "asc"
@@ -293,7 +292,7 @@ GET movies/_search
     }
 }
 
-//Question
+//Question 7
 
 GET movies/_search
 {
@@ -305,4 +304,113 @@ GET movies/_search
             }
         }
     }
+}
+
+//Exemple cardinalité
+
+GET movies/_search
+{
+    "size": 0,
+    "aggs": {
+        "par_cardinalité": {
+            "cardinality": {
+                "field": "fields.actors.raw"
+            }
+        }
+    }
+}
+
+//Exemple le terme le plus utilisé dans les titres
+
+GET movies/_search
+{
+    "size": 0,
+    "query":{
+        "match":{
+            "fields.actors":"Leonardo"
+        }
+    },
+    "aggs": {
+        "par_terms_use": {
+            "significant_terms": {
+                "field": "fields.plot"
+            }
+        }
+    }
+}
+
+//Exemple date histogram
+GET movies/_search
+{
+    "size": 0,
+    "aggs": {
+        "par_annee": {
+            "date_histogram": {
+                "field": "fields.release_date",
+                "interval": "month"
+            }
+            // "aggs": {
+            //     "rank_moyen": {
+            //         "avg": {
+            //             "field": "fields.rank"
+            //         }
+            //     }
+            // }
+        }   
+    }
+    // "sort": {
+    //     "fields.year": "asc"
+    // }
+}
+
+//Exemple date range
+GET movies/_search
+{
+    "size": 0,
+    "aggs": {
+        "par_annee": {
+            "date_range": {
+                "field": "fields.release_date",
+                "format":"dd/MM/yyyy",
+                "ranges":[
+                    {"from":"01/01/1990", "to":"31/12/1990"}
+                ]
+            }
+            // "aggs": {
+            //     "rank_moyen": {
+            //         "avg": {
+            //             "field": "fields.rank"
+            //         }
+            //     }
+            // }
+        }   
+    }
+    // "sort": {
+    //     "fields.year": "asc"
+    // }
+}
+
+//exemple histogram
+
+GET movies/_search
+{
+    "size": 0,
+    "aggs": {
+        "par_rank": {
+            "histogram": {
+                "field": "fields.rank",
+                "interval": 500
+            }
+            // "aggs": {
+            //     "rank_moyen": {
+            //         "avg": {
+            //             "field": "fields.rank"
+            //         }
+            //     }
+            // }
+        }   
+    }
+    // "sort": {
+    //     "fields.year": "asc"
+    // }
 }
