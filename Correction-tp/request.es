@@ -251,12 +251,12 @@ GET movies/_search
 //Question 5
 GET movies/_search
 {
-    "size": 0,
+    
     "aggs": {
         "par_annee": {
             "terms": {
                 "field": "fields.year",
-                "order":{"_count":"desc"}
+                "order":{"_term":"desc"}
             },
             "aggs": {
                 "rank_moyen": {
@@ -324,17 +324,15 @@ GET movies/_search
 
 GET movies/_search
 {
-    "size": 0,
-    "query":{
-        "match":{
-            "fields.actors":"Leonardo"
-        }
+    // "size": 0,
+    "query": {
+        "terms": { "fields.title.keyword": [ "Star Wars" ] }
     },
     "aggs": {
         "par_terms_use": {
-            "significant_terms": {
-                "field": "fields.plot"
-            }
+                    "significant_terms": {
+                        "field": "genres"
+                    }
         }
     }
 }
