@@ -156,3 +156,153 @@ GET movies/_search
         "fields.genres.keyword":"asc"
     } 
 }
+
+
+//Correction Agrégations
+//Question 1
+GET movies/_search
+{
+    "size":0,
+    "aggs":{
+        "note_moyenne":{
+            "avg":{"field":"fields.rating"}
+        }
+    }
+}
+
+//Question 2
+GET movies/_search
+{
+    "size":0,
+    "query":{
+        "match_phrase":{
+            "fields.directors": "George Lucas"
+        }
+    },
+    "aggs":{
+        "note_moyenne":{
+            "avg":{"field":"fields.rating"}
+        },
+        "rank_moyen":{
+            "avg":{"field": "fields.rank"}
+        }
+    }
+}
+//Question 3
+
+GET movies/_search
+{
+    "size": 0,
+    // "query": {
+    //     "match_phrase": {
+    //         "fields.directors": "George Lucas"
+    //     }
+    // },
+    "aggs": {
+        "par_annee": {
+            "terms": {
+                "field": "fields.year"
+            },
+            "aggs": {
+                "note_moyenne": {
+                    "avg": {
+                        "field": "fields.rating"
+                    }
+                }
+            }
+        }
+    }
+}
+//Question 4
+GET movies/_search
+{
+    "size": 0,
+    // "query": {
+    //     "match_phrase": {
+    //         "fields.directors": "George Lucas"
+    //     }
+    // },
+    "aggs": {
+        "par_annee": {
+            "terms": {
+                "field": "fields.year"
+            },
+            "aggs": {
+                "note_moyenne": {
+                    "avg": {
+                        "field": "fields.rating"
+                    }
+                },
+                "note_min":{
+                    "min":{
+                        "field": "fields.rating"
+                    }
+                },
+                "note_max":{
+                    "max":{
+                        "field": "fields.rating"
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Question 5
+GET movies/_search
+{
+    "size": 0,
+    "aggs": {
+        "par_annee": {
+            "terms": {
+                "field": "fields.year",
+                "order":{"rank_moyen":"desc"}
+            },
+            "aggs": {
+                "rank_moyen": {
+                    "avg": {
+                        "field": "fields.rank"
+                    }
+                }
+            }
+        }
+        
+    }
+    // "sort": {
+    //     "fields.year": "asc"
+    // }
+}
+
+
+//Question 6
+GET movies/_search
+{
+    "size":0,
+    "aggs":{
+        "range_rating":{
+            "range":{
+                "field":"fields.rating",
+                "ranges":[
+                    {"from":0, "to":1.9},
+                    {"from":2, "to":3.9},
+                    {"from":4, "to":5.9},
+                    {"from":6, "to":7.9}
+                ]
+            }
+        }
+    }
+}
+
+//Question
+
+GET movies/_search
+{
+    "size": 0,
+    "aggs": {
+        "par_genres": {
+            "terms": {
+                "field": "fields.genres.keyword"
+            }
+        }
+    }
+}
