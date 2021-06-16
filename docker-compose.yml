@@ -18,5 +18,13 @@ services:
             - elk
         depends_on: 
             - elasticsearch
+    logstash:
+        image: docker.elastic.co/logstash/logstash:7.13.2
+        volumes: 
+            - "./logstash-config:/usr/share/logstash/config"
+        depends_on: 
+            - elasticsearch
+        networks: 
+            - elk
 networks:
     elk:
