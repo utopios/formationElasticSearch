@@ -5,12 +5,12 @@ GET movies/_search
         "bool": {
             "should": [
                 {
-                    "match": {
+                    "match_phrase": {
                         "fields.title": "Star Wars"
                     }
                 },
                 {
-                    "match": {
+                    "match_phrase": {
                         "fields.directors": "George Lucas"
                     }
                 }
@@ -413,4 +413,54 @@ GET movies/_search
     // "sort": {
     //     "fields.year": "asc"
     // }
+}
+
+//Exemple d'action sur le score d'une requête
+GET movies/_search
+{
+    "query": {
+        "bool": {
+            "should": [
+                {
+                    "match_phrase": {
+                        "fields.title": {
+                            "query" : "Star Wars",
+                            "boost" : 5
+                        }
+                    }
+                },
+                {
+                    "match_phrase": {
+                        "fields.directors": "George Lucas"
+                    }
+                }
+            ]
+        }
+    }
+}
+
+//Exemple de boost positif et négatif
+
+GET movies/_search
+{
+    "query":{
+        "boosting":{
+            "positive":{
+                
+                    "match_phrase":{
+                        "fields.title":{
+                            "query":"Star Wars",
+                            "boost" : 4
+                        }
+                    }
+                
+            },
+            "negative":{
+                "match":{
+                    "fields.directors":"J.J Abrams"
+                }
+            },
+            "negative_boost": 0.33
+        }
+    }
 }
