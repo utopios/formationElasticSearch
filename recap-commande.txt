@@ -96,3 +96,30 @@ Exemple Avec bool <should>
 range:{
     "fields.release_date": {"from":depart,"to":end}
 }
+
+
+//Exemple d'envoie de requête search avec curl
+curl -XGET localhost:9200/movies/_search -H "content-type:application/json" --data-binary @query.json -o result.json
+
+//Exemple d'ajout de données avec curl
+curl -XPUT localhost:9200/movies/_bulk -H "content-type:application/json" --data-binary @big-movies-elastic.json -o result.json
+
+//pour enregister un template de recherche comme script
+//On utilise l'EndPoint de API _scripts
+//chaque script doit avoir un nom
+POST localhost:9200/_scripts/<nomscript>
+{
+    "script":{
+        "lang": "mustache",
+        "source":{
+            "query":{
+                "match":{
+                    "fields.actors":"{{actor}}"
+                }
+            }
+        },
+        "params":{
+            "actor":"Harrison"
+        }
+    }
+}

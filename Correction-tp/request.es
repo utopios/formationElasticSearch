@@ -46,10 +46,15 @@ GET movies/_search
 //Réponse question 2
 GET movies/_search
 {
-    "query":{
-        "match":{
-            "fields.actors": "Harrison Ford"
-            }
+    "query": {
+        "bool": {
+            "should": [
+                {
+                    "match": {
+                        "fields.actors": "Harrison Ford"
+                    }
+                }
+            ]
         }
     }
 }
@@ -146,5 +151,8 @@ GET movies/_search
                 }
             ]
         }
-    }
+    },
+    "sort":{
+        "fields.genres.keyword":"asc"
+    } 
 }

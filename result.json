@@ -1,0 +1,345 @@
+{
+    "took": 12,
+    "timed_out": false,
+    "_shards": {
+        "total": 2,
+        "successful": 2,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": {
+            "value": 25,
+            "relation": "eq"
+        },
+        "max_score": 5.899317,
+        "hits": [
+            {
+                "_index": "movies",
+                "_type": "_doc",
+                "_id": "18",
+                "_score": 5.899317,
+                "_source": {
+                    "fields": {
+                        "directors": [
+                            "Baz Luhrmann"
+                        ],
+                        "release_date": "2013-05-01T00:00:00Z",
+                        "rating": 7.3,
+                        "genres": [
+                            "Drama",
+                            "Romance"
+                        ],
+                        "image_url": "http://ia.media-imdb.com/images/M/MV5BMTkxNTk1ODcxNl5BMl5BanBnXkFtZTcwMDI1OTMzOQ@@._V1_SX400_.jpg",
+                        "plot": "A Midwestern war veteran finds himself drawn to the past and lifestyle of his millionaire neighbor.",
+                        "title": "The Great Gatsby",
+                        "rank": 18,
+                        "running_time_secs": 8580,
+                        "actors": [
+                            "Leonardo DiCaprio",
+                            "Carey Mulligan",
+                            "Joel Edgerton"
+                        ],
+                        "year": 2013
+                    },
+                    "id": "tt1343092",
+                    "type": "add"
+                }
+            },
+            {
+                "_index": "movies",
+                "_type": "_doc",
+                "_id": "97",
+                "_score": 5.899317,
+                "_source": {
+                    "fields": {
+                        "directors": [
+                            "Quentin Tarantino"
+                        ],
+                        "release_date": "2012-12-25T00:00:00Z",
+                        "rating": 8.5,
+                        "genres": [
+                            "Adventure",
+                            "Drama",
+                            "Western"
+                        ],
+                        "image_url": "http://ia.media-imdb.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_SX400_.jpg",
+                        "plot": "With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner.",
+                        "title": "Django Unchained",
+                        "rank": 97,
+                        "running_time_secs": 9900,
+                        "actors": [
+                            "Jamie Foxx",
+                            "Christoph Waltz",
+                            "Leonardo DiCaprio"
+                        ],
+                        "year": 2012
+                    },
+                    "id": "tt1853728",
+                    "type": "add"
+                }
+            },
+            {
+                "_index": "movies",
+                "_type": "_doc",
+                "_id": "134",
+                "_score": 5.899317,
+                "_source": {
+                    "fields": {
+                        "directors": [
+                            "Martin Scorsese"
+                        ],
+                        "release_date": "2013-11-14T00:00:00Z",
+                        "genres": [
+                            "Biography",
+                            "Crime",
+                            "Drama"
+                        ],
+                        "image_url": "http://ia.media-imdb.com/images/M/MV5BMTQ5OTI2MTQ1MV5BMl5BanBnXkFtZTcwMjY0Njk2OQ@@._V1_SX400_.jpg",
+                        "plot": "Based on the true story of Jordan Belfort, from his rise to a wealthy stockbroker living the high life to his fall involving crime, corruption and the federal government.",
+                        "title": "The Wolf of Wall Street",
+                        "rank": 134,
+                        "year": 2013,
+                        "actors": [
+                            "Leonardo DiCaprio",
+                            "P.J. Byrne",
+                            "Jon Favreau"
+                        ]
+                    },
+                    "id": "tt0993846",
+                    "type": "add"
+                }
+            },
+            {
+                "_index": "movies",
+                "_type": "_doc",
+                "_id": "376",
+                "_score": 5.899317,
+                "_source": {
+                    "fields": {
+                        "directors": [
+                            "Martin Scorsese"
+                        ],
+                        "release_date": "2010-02-13T00:00:00Z",
+                        "rating": 8,
+                        "genres": [
+                            "Drama",
+                            "Mystery",
+                            "Thriller"
+                        ],
+                        "image_url": "http://ia.media-imdb.com/images/M/MV5BMTMxMTIyNzMxMV5BMl5BanBnXkFtZTcwOTc4OTI3Mg@@._V1_SX400_.jpg",
+                        "plot": "Drama set in 1954, U.S. Marshal Teddy Daniels is investigating the disappearance of a murderess who escaped from a hospital for the criminally insane and is presumed to be hiding nearby.",
+                        "title": "Shutter Island",
+                        "rank": 376,
+                        "running_time_secs": 8280,
+                        "actors": [
+                            "Leonardo DiCaprio",
+                            "Emily Mortimer",
+                            "Mark Ruffalo"
+                        ],
+                        "year": 2010
+                    },
+                    "id": "tt1130884",
+                    "type": "add"
+                }
+            },
+            {
+                "_index": "movies",
+                "_type": "_doc",
+                "_id": "848",
+                "_score": 5.899317,
+                "_source": {
+                    "fields": {
+                        "directors": [
+                            "Danny Boyle"
+                        ],
+                        "release_date": "2000-02-02T00:00:00Z",
+                        "rating": 6.4,
+                        "genres": [
+                            "Adventure",
+                            "Drama",
+                            "Romance",
+                            "Thriller"
+                        ],
+                        "image_url": "http://ia.media-imdb.com/images/M/MV5BMTIzNzYzMjIyMF5BMl5BanBnXkFtZTcwNDg1MzMzMQ@@._V1_SX400_.jpg",
+                        "plot": "Twenty-something Richard travels to Thailand and finds himself in possession of a strange map. Rumours state that it leads to a solitary beach paradise, a tropical bliss - excited and intrigued, he sets out to find it.",
+                        "title": "The Beach",
+                        "rank": 848,
+                        "running_time_secs": 7140,
+                        "actors": [
+                            "Leonardo DiCaprio",
+                            "Daniel York",
+                            "Patcharawan Patarakijjanon"
+                        ],
+                        "year": 2000
+                    },
+                    "id": "tt0163978",
+                    "type": "add"
+                }
+            },
+            {
+                "_index": "movies",
+                "_type": "_doc",
+                "_id": "583",
+                "_score": 5.529197,
+                "_source": {
+                    "fields": {
+                        "directors": [
+                            "Martin Scorsese"
+                        ],
+                        "release_date": "2002-12-09T00:00:00Z",
+                        "rating": 7.5,
+                        "genres": [
+                            "Crime",
+                            "Drama",
+                            "History"
+                        ],
+                        "image_url": "http://ia.media-imdb.com/images/M/MV5BMTI4NTM0Mzg2NV5BMl5BanBnXkFtZTcwNjQxMDAwMQ@@._V1_SX400_.jpg",
+                        "plot": "In 1863, Amsterdam Vallon returns to the Five Points area of New York City seeking revenge against Bill the Butcher, his father's killer.",
+                        "title": "Gangs of New York",
+                        "rank": 583,
+                        "running_time_secs": 10020,
+                        "actors": [
+                            "Leonardo DiCaprio",
+                            "Cameron Diaz",
+                            "Daniel Day-Lewis"
+                        ],
+                        "year": 2002
+                    },
+                    "id": "tt0217505",
+                    "type": "add"
+                }
+            },
+            {
+                "_index": "movies",
+                "_type": "_doc",
+                "_id": "4554",
+                "_score": 5.529197,
+                "_source": {
+                    "fields": {
+                        "directors": [
+                            "Cary Fukunaga"
+                        ],
+                        "release_date": "2009-01-18T00:00:00Z",
+                        "rating": 7.5,
+                        "genres": [
+                            "Adventure",
+                            "Crime",
+                            "Drama",
+                            "Thriller"
+                        ],
+                        "image_url": "http://ia.media-imdb.com/images/M/MV5BMTkxMTQ0NjgwNV5BMl5BanBnXkFtZTcwNzM5MjIzMg@@._V1_SX400_.jpg",
+                        "title": "Sin nombre",
+                        "rank": 4554,
+                        "running_time_secs": 5760,
+                        "actors": [
+                            "Paulina Gaitan",
+                            "Marco Antonio Aguirre",
+                            "Leonardo Alonso"
+                        ],
+                        "year": 2009
+                    },
+                    "id": "tt1127715",
+                    "type": "add"
+                }
+            },
+            {
+                "_index": "movies",
+                "_type": "_doc",
+                "_id": "111",
+                "_score": 4.935864,
+                "_source": {
+                    "fields": {
+                        "directors": [
+                            "James Cameron"
+                        ],
+                        "release_date": "1997-11-01T00:00:00Z",
+                        "rating": 7.6,
+                        "genres": [
+                            "Drama",
+                            "Romance"
+                        ],
+                        "image_url": "http://ia.media-imdb.com/images/M/MV5BMjExNzM0NDM0N15BMl5BanBnXkFtZTcwMzkxOTUwNw@@._V1_SX400_.jpg",
+                        "plot": "A seventeen-year-old aristocrat, expecting to be married to a rich claimant by her mother, falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+                        "title": "Titanic",
+                        "rank": 111,
+                        "running_time_secs": 11640,
+                        "actors": [
+                            "Leonardo DiCaprio",
+                            "Kate Winslet",
+                            "Billy Zane"
+                        ],
+                        "year": 1997
+                    },
+                    "id": "tt0120338",
+                    "type": "add"
+                }
+            },
+            {
+                "_index": "movies",
+                "_type": "_doc",
+                "_id": "150",
+                "_score": 4.935864,
+                "_source": {
+                    "fields": {
+                        "directors": [
+                            "Martin Scorsese"
+                        ],
+                        "release_date": "2006-09-26T00:00:00Z",
+                        "rating": 8.5,
+                        "genres": [
+                            "Crime",
+                            "Drama",
+                            "Thriller"
+                        ],
+                        "image_url": "http://ia.media-imdb.com/images/M/MV5BMTI1MTY2OTIxNV5BMl5BanBnXkFtZTYwNjQ4NjY3._V1_SX400_.jpg",
+                        "plot": "An undercover state cop who has infiltrated an Irish gang and a mole in the police force working for the same mob race to track down and identify each other before being exposed to the enemy, after both sides realize their outfit has a rat.",
+                        "title": "The Departed",
+                        "rank": 150,
+                        "running_time_secs": 9060,
+                        "actors": [
+                            "Leonardo DiCaprio",
+                            "Matt Damon",
+                            "Jack Nicholson"
+                        ],
+                        "year": 2006
+                    },
+                    "id": "tt0407887",
+                    "type": "add"
+                }
+            },
+            {
+                "_index": "movies",
+                "_type": "_doc",
+                "_id": "402",
+                "_score": 4.935864,
+                "_source": {
+                    "fields": {
+                        "directors": [
+                            "Baz Luhrmann"
+                        ],
+                        "release_date": "1996-11-01T00:00:00Z",
+                        "rating": 6.8,
+                        "genres": [
+                            "Drama",
+                            "Romance"
+                        ],
+                        "image_url": "http://ia.media-imdb.com/images/M/MV5BMTU3Mzc3MjE3N15BMl5BanBnXkFtZTYwMzY0MTg4._V1_SX400_.jpg",
+                        "plot": "Shakespeare's famous play is updated to the hip modern suburb of Verona still retaining its original dialogue.",
+                        "title": "Romeo + Juliet",
+                        "rank": 402,
+                        "running_time_secs": 7200,
+                        "actors": [
+                            "Leonardo DiCaprio",
+                            "Claire Danes",
+                            "John Leguizamo"
+                        ],
+                        "year": 1996
+                    },
+                    "id": "tt0117509",
+                    "type": "add"
+                }
+            }
+        ]
+    }
+}

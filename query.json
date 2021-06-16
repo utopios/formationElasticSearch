@@ -1,7 +1,28 @@
 {
-    "bool" : {
-        "must" : {},
-        "must_not" : {},
-        "should" : {}
-    }
+    "_source":{
+        "includes":["fields.title"]
+    },
+    "query": {
+        "bool": {
+            "must":[
+                {
+                    "match_phrase":{
+                        "fields.directors":"J.J. Abrams"
+                    }
+                },
+                {
+                    "range":{
+                        "fields.release_date":{
+                            "from": "2010-01-01",
+                            "to": "2015-12-31"
+                        }
+                    }
+                    
+                }
+            ]
+        }
+    },
+    "sort":{
+        "fields.genres.keyword":"asc"
+    } 
 }
