@@ -22,3 +22,29 @@ GET movies/_search/template
         "actor": "Leonardo"
     }
 }
+
+//Exemple agrégation
+
+GET movies/_search
+{
+    "size":0,
+    "query": {
+        "bool": {
+            "should": [
+                {
+                    "match_phrase": {
+                        "fields.actors": "Harrison Ford"
+                    }
+                }
+            ]
+        }
+    },
+
+    "aggs":{
+        "aggs_par_annee":{
+            "terms":{
+                "field":"fields.year"
+            }
+        }
+    }
+}

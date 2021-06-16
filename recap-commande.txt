@@ -123,3 +123,19 @@ POST localhost:9200/_scripts/<nomscript>
         }
     }
 }
+
+//Pour utiliser les agrégations dans elasticsearch
+EndPoint Search localhost:9200/movies/_search
+
+{
+    "query":{
+
+    },
+    "aggs":{
+        "aggs_par_annee":{
+            "terms":{
+                "field":"fields.year"
+            }
+        }
+    }
+}
